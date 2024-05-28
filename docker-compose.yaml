@@ -1,0 +1,93 @@
+version: "3.9"
+services:
+
+  valhalla_sfo:
+    image: valhalla/valhalla:run-latest
+    ports:
+      - 8002:8002
+    volumes:
+      - ./scripts_sfo:/scripts_sfo
+      - ./data_sfo:/data_sfo
+      - ./osm_data:/osm_data
+    entrypoint: ["/bin/sh","scripts_sfo/build_tiles_sfo.sh"]
+
+  valhalla_dfo:
+    image: valhalla/valhalla:run-latest
+    ports:
+      - 8003:8002
+    volumes:
+      - ./scripts_dfo:/scripts_dfo
+      - ./data_dfo:/data_dfo
+      - ./osm_data:/osm_data
+    entrypoint: ["/bin/sh","scripts_dfo/build_tiles_dfo.sh"]
+
+  valhalla_pfo:
+    image: valhalla/valhalla:run-latest
+    ports:
+      - 8004:8002
+    volumes:
+      - ./scripts_pfo:/scripts_pfo
+      - ./data_pfo:/data_pfo
+      - ./osm_data:/osm_data
+    entrypoint: ["/bin/sh","scripts_pfo/build_tiles_pfo.sh"]
+
+  valhalla_skfo:
+    image: valhalla/valhalla:run-latest
+    ports:
+      - 8005:8002
+    volumes:
+      - ./scripts_skfo:/scripts_skfo
+      - ./data_skfo:/data_skfo
+      - ./osm_data:/osm_data
+    entrypoint: ["/bin/sh","scripts_skfo/build_tiles_skfo.sh"]
+
+  valhalla_ufo:
+    image: valhalla/valhalla:run-latest
+    ports:
+      - 8006:8002
+    volumes:
+      - ./scripts_ufo:/scripts_ufo
+      - ./data_ufo:/data_ufo
+      - ./osm_data:/osm_data
+    entrypoint: ["/bin/sh","scripts_ufo/build_tiles_ufo.sh"]
+
+  valhalla_yufo:
+    image: valhalla/valhalla:run-latest
+    ports:
+      - 8007:8002
+    volumes:
+      - ./scripts_yufo:/scripts_yufo
+      - ./data_yufo:/data_yufo
+      - ./osm_data:/osm_data
+    entrypoint: ["/bin/sh","scripts_yufo/build_tiles_yufo.sh"]
+
+  valhalla_szfo:
+    image: valhalla/valhalla:run-latest
+    ports:
+      - 8008:8002
+    volumes:
+      - ./scripts_szfo:/scripts_szfo
+      - ./data_szfo:/data_szfo
+      - ./osm_data:/osm_data
+    entrypoint: ["/bin/sh","scripts_szfo/build_tiles_szfo.sh"]
+
+  valhalla_crim:
+    image: valhalla/valhalla:run-latest
+    ports:
+      - 8009:8002
+    volumes:
+      - ./scripts_crim:/scripts_crim
+      - ./data_crim:/data_crim
+      - ./osm_data:/osm_data
+    entrypoint: ["/bin/sh","scripts_crim/build_tiles_crim.sh"]
+
+  valhalla_cfo:
+    image: valhalla/valhalla:run-latest
+    ports:
+      - 8010:8002
+    volumes:
+      - ./scripts_cfo:/scripts_cfo
+      - ./data_cfo:/data_cfo
+      - ./osm_data:/osm_data
+    entrypoint: ["/bin/sh","scripts_cfo/build_tiles_cfo.sh"]
+  
